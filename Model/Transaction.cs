@@ -1,0 +1,28 @@
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Numerics;
+
+namespace PaymentGatewayAPI.Model
+{
+    public class Transaction
+    {
+        public int ID { get; set; }
+        public required Merchant Merchant { get; set; }
+        public required string CardHolderName { get; set; }
+        public required string  CardNo { get; set; }
+        public required string ExpiryDate { get; set; }
+        public required string CVV { get; set; }
+
+        [Column(TypeName = "decimal(18, 2)")]
+        public required decimal Amount { get; set; }
+
+        public required string Currency { get; set; }
+
+        public DateTime TransactionDate { get; set; } = DateTime.UtcNow;
+
+        public TransactionStatus Status { get; set; } = TransactionStatus.Processing;
+
+        public string Message { get; set; } = String.Empty;
+
+    }
+}
