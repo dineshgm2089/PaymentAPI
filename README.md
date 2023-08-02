@@ -116,3 +116,5 @@ For cloud deployment, consider using the following technologies:
 
 - JWT token authentication is implemented to authorize merchants and prevent unauthorized access to the payment service.
 - The merchant ID is extracted from the token whenever a request is made, ensuring proper identification and authorization.
+- Dtos ,Repository Pattern and Automapper(for Object - Object mapping) has been used.
+- 
